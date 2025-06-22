@@ -1,12 +1,62 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8">
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
+    <title>智教云 - 家教系统</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- Tailwind配置 -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#165DFF',
+              secondary: '#36D399',
+              warning: '#FFAA33',
+              danger: '#F87272',
+              dark: '#1E293B',
+              light: '#F8FAFC'
+            },
+            fontFamily: {
+              inter: ['Inter', 'system-ui', 'sans-serif'],
+            },
+          },
+        }
+      }
+    </script>
+    
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .card-shadow {
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+        }
+        .btn-hover {
+          @apply transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5;
+        }
+        .form-focus {
+          @apply focus:ring-2 focus:ring-primary/50 focus:border-primary;
+        }
+      }
+    </style>
   </head>
-  <body>
+  <body class="font-inter">
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>

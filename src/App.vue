@@ -1,47 +1,54 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+// 导入Vue Router
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <!-- 路由出口，用于显示当前路由对应的组件 -->
+  <RouterView />
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<style>
+/* Tailwind CSS 配置 */
+:root {
+  --primary: #165DFF;
+  --secondary: #36D399;
+  --warning: #FFAA33;
+  --danger: #F87272;
+  --dark: #1E293B;
+  --light: #F8FAFC;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+/* 全局样式 */
+* {
+  box-sizing: border-box;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+/* App容器样式现在应用到body */
+body {
+  min-height: 100vh;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+/* 确保容器充分利用屏幕宽度 */
+.container {
+  max-width: none;
+}
+
+/* 优化大屏幕显示 */
+@media (min-width: 1280px) {
+  .max-w-7xl {
+    max-width: 90rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .max-w-7xl {
+    max-width: 100rem;
   }
 }
 </style>
